@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ol,
+ul {
+  list-style: none;
+}
+
+/* body {
+  overflow: hidden;
+} */
+body > .page {
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: inline-grid;
+  grid-template-rows: 50vh 50vh;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas:
+    "left1 right1"
+    "left2 right2";
+}
+body > .page > section {
+  /* width: 50vw;
+  height: 50vh; */
+  border: 1px solid #ddd;
+}
+body > .page > #app1 {
+  grid-area: left1;
+}
+body > .page > #app2 {
+  grid-area: right1;
+}
+body > .page > #app3 {
+  grid-area: left2;
+}
+body > .page > #app4 {
+  grid-area: right2;
+}
+
+#app1 {
+  width: 50vw;
+  height: 50vh;
+}
+
+#app2 .tab-bar {
+  display: flex;
+}
+#app2 .tab-bar > li {
+  border: 2px solid #ddd;
+  width: 50%;
+}
+#app2 .tab-bar > li.selected {
+  background: #ddd;
+  color: white;
+}
+#app2 .tab-content > li {
+  display: none;
+}
+#app2 .tab-content > li.active {
+  display: block;
+}
+
+#app3 .square {
+  background: #ddd;
+  margin-top: 5vw;
+  margin-left: 5vw;
+  width: 10vw;
+  height: 10vw;
+  transition: transform 1s;
+}
+#app3 .square.active {
+  transform: translateX(15vw);
+}
+
+@keyframes change {
+  0% {
+    background: pink;
+  }
+  100% {
+    background: lightblue;
+  }
+}
+#app4 .circle {
+  width: 10vw;
+  height: 10vw;
+  margin-top: 5vw;
+  margin-left: 5vw;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+#app4 .circle.active {
+  animation: change 1s infinite alternate linear;
+}
+
+
+/*# sourceMappingURL=/main.1f19ae8e.css.map */
